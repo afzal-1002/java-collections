@@ -2,6 +2,7 @@ package com.collections.iterable_collection_list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
@@ -19,7 +20,7 @@ public class ListInterface {
 	List<Integer> vectorList = new Vector<>();
 
 	// 4. Using Stack ()
-	List<Integer> stack = new Stack<>();
+	List<Integer> stackList = new Stack<>();
 
 
 	public void ListOperations() {
@@ -94,7 +95,7 @@ public class ListInterface {
 	}
 
 
-		public  void VecotrOperation()
+	public  void VecotrOperation()
 	{
 		
 
@@ -116,12 +117,46 @@ public class ListInterface {
 	}
 
 
+	public  void StackOperation()
+	{
+		
+
+		Stack<Integer>  stack = new Stack<>();
+
+		System.out.println("-------------Stack------------------------");
+		stack.push(4);
+		stack.push(5);
+		stack.push(4);
+		stack.addElement(Integer.valueOf(15));
+
+
+
+		stack.addAll(Arrays.asList(4 ,5,6,9,11));
+		// stack.addAll(new Vector<>(List.of(4 ,5,6,9,11)));
+		stack.add(95);
+
+		System.out.println("get  = " + stack.get(0));
+		System.out.println("removeIf  = " + stack.elementAt(5));
+		System.out.println("removeLast  = " + stack.firstElement());
+
+		stack.sort(Comparator.reverseOrder());
+
+			System.out.println("Sorted " + stack);
+
+		stack.sort(Comparator.naturalOrder());
+
+		System.out.println("Sorted " + stack);
+	
+	}
+
+
 	public static void main(String[] args) {
 		
 		ListInterface listInterface = new ListInterface();
 
 		listInterface.ListOperations();
 		listInterface.LinkedListOperation();
+		listInterface.StackOperation();
 	}
 
 }
