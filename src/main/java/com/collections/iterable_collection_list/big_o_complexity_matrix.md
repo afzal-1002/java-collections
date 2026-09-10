@@ -24,3 +24,33 @@
 
 N = number of elements already in your collection.
 K = number of elements in another collection you are adding/checking against
+
+
+| Operation       |    ArrayList |   LinkedList | Memory reason                   |
+| --------------- | -----------: | -----------: | ------------------------------- |
+| `addLast()`     |      `O(1)*` |       `O(1)` | End is easy                     |
+| `addFirst()`    |       `O(N)` |       `O(1)` | Array shifts; List changes head |
+| `get(index)`    |       `O(1)` |       `O(N)` | Array jumps; List walks         |
+| `set(index)`    |       `O(1)` |       `O(N)` | Same as get                     |
+| `remove(index)` |       `O(N)` |       `O(N)` | Shift vs search                 |
+| `removeFirst()` |       `O(N)` |       `O(1)` | Shift vs head                   |
+| `removeLast()`  |       `O(1)` |       `O(1)` | Nothing after last              |
+| `contains()`    |       `O(N)` |       `O(N)` | Search                          |
+| `size()`        |       `O(1)` |       `O(1)` | Size stored                     |
+| `sort()`        | `O(N log N)` | `O(N log N)` | Sorting                         |
+| `clear()`       |       `O(N)` |       `O(N)` | Touch references                |
+
+
+1. ARRAY = INDEX FAST              → get/set O(1)
+2. ARRAY = SHIFT BAD               → add/remove beginning/middle O(N)
+
+3. LINKED LIST = ENDS FAST         → add/remove first/last O(1)
+4. LINKED LIST = INDEX BAD         → get/set(index) O(N)
+
+5. DON'T KNOW WHERE? SEARCH        → contains/indexOf O(N)
+
+
+1. Sort           → O(N log N) 
+2. One full loop  → O(N)
+3. Nested N × K   → O(N × K)
+4. Size           → O(1)
