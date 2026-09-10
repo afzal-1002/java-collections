@@ -23,6 +23,7 @@
 
 
 N = number of elements already in your collection.
+<<<<<<< HEAD
 K = number of elements in another collection you are adding/checking against
 
 
@@ -54,3 +55,6 @@ K = number of elements in another collection you are adding/checking against
 2. One full loop  → O(N)
 3. Nested N × K   → O(N × K)
 4. Size           → O(1)
+=======
+K = number of elements in another collection you are adding/checking against
+>>>>>>> origin/master
